@@ -25,7 +25,7 @@ const BlogIndex = ({ data, location }) => {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <LocalizedLink style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <LocalizedLink style={{ boxShadow: `none` }} to={`/blog/${node.fields.slug}`}>
                   {title}
                 </LocalizedLink>
               </h3>
@@ -48,7 +48,7 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query Index($locale: String!, $dateFormat: String!, ) {
+  query Index($locale: String!, $dateFormat: String!) {
     site {
       siteMetadata {
         title

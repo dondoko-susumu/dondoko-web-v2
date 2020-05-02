@@ -7,7 +7,6 @@ const {
   removeTrailingSlash,
 } = require(`./src/utils/gatsby-node-helpers`);
 
-
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
 
@@ -64,7 +63,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     // If it's the default language, pass the locale for that
     const lang = isDefault ? defaultKey : name.split(`.`)[1];
 
-    const slug = createFilePath({ node, getNode });
+    const filePath = createFilePath({ node, getNode });
+    const slug = filePath.split(`/`)[1];
 
     // Adding the nodes on GraphQL for each post as "fields"
     createNodeField({ node, name: `slug`, value: slug });
