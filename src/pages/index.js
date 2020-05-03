@@ -84,7 +84,7 @@ export const pageQuery = graphql`
             date(formatString: $dateFormat)
             title
             description
-            image{
+            image {
               childImageSharp {
                 fluid(maxWidth: 400, maxHeight: 200) {
                   ...GatsbyImageSharpFluid
