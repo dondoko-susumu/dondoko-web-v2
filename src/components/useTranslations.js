@@ -32,9 +32,12 @@ const query = graphql`
         node {
           name
           translations: childTranslationsJson {
+            siteTitle,
+            siteDescription,
+            home
             hello
             welcome
-            dondoko_susumu
+            author
           }
         }
       }

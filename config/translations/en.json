@@ -1,5 +1,8 @@
 {
+  "siteTitle": "Dondoko Susumu Web Site",
+  "siteDescription": "Dondoko Susumu Official Web Site",
+  "home": "HOME",
   "hello": "Hi people",
   "welcome": "Welcome to Dondoko Susumu Official Web Site.",
-  "dondoko_susumu": "Dondoko Susumu"
+  "author": "Dondoko Susumu"
 }

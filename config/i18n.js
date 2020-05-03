@@ -8,8 +8,7 @@ module.exports = {
     dateFormat: `YYYY/MM/DD`,
     siteLanguage: `ja`,
     ogLanguage: `ja_jp`,
-    defaultTitle: `どんどこすすむのホームページ`,
-    defaultDescription: `どんどこすすむの公式ホームページ`,
+    title: `日本語`
   },
   en: {
     path: `en`,
@@ -17,7 +16,6 @@ module.exports = {
     dateFormat: `DD/MM/YYYY`,
     siteLanguage: `en`,
     ogLanguage: `en_US`,
-    defaultTitle: `Dondoko Susumu Web Site`,
-    defaultDescription: `Dondoko Susumu Official Web Site`,
+    title: `English`
   },
 }

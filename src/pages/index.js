@@ -1,20 +1,27 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import useTranslations from "../components/useTranslations"
+
+import Img from "gatsby-image"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Link from "../components/LocalizedLink"
-import Img from "gatsby-image"
+
 import { rhythm } from "../utils/typography"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+const BlogIndex = ({ data, location, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
+
+  const {
+    siteTitle,
+    home,
+  } = useTranslations()
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title={home} lang={pageContext.locale} />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
@@ -61,11 +68,6 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query Index($locale: String!, $dateFormat: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       filter: {
         fields: { locale: { eq: $locale } }

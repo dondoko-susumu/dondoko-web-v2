@@ -10,24 +10,41 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+import useTranslations from "../components/useTranslations"
+
 const SEO = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+  const { site, ogImage } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
             description
+            author {
+              name
+              summary
+            }
+            siteURL
             social {
               twitter
             }
           }
         }
+        ogImage: file(relativePath: {eq: "kabagorou.png"}) {
+          publicURL
+        }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const {
+    siteTitle,
+    siteDescription,
+  } = useTranslations()
+
+  const metaTitle = title || siteTitle || site.siteMetadata.title
+  const metaDescription = description || siteDescription || site.siteMetadata.description
+  const ogImageURL = `${site.siteMetadata.siteURL}${ogImage.publicURL}`
 
   return (
     <Helmet
@@ -35,7 +52,7 @@ const SEO = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${siteTitle}`}
       meta={[
         {
           name: `description`,
@@ -54,6 +71,10 @@ const SEO = ({ description, lang, meta, title }) => {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: ogImageURL,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -63,7 +84,7 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,

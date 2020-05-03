@@ -5,16 +5,20 @@ import Link from "../components/LocalizedLink"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import useTranslations from "../components/useTranslations"
 import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
+  const {
+    siteTitle,
+  } = useTranslations()
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
-  const { previous, next } = pageContext
+  const { previous, next, locale } = pageContext
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
+        lang={locale}
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
@@ -83,11 +87,6 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query Post($locale: String!, $title: String!, $dateFormat: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(
       frontmatter: { title: { eq: $title } }
       fields: { locale: { eq: $locale } }
