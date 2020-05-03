@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 const LocaleContext = React.createContext();
 
@@ -8,9 +7,6 @@ const LocaleContext = React.createContext();
 // As this component wraps every page (due to the wrapPageElement API) we can be sure to have
 // the locale available everywhere!
 const LocaleContextProvider = ({ children, pageContext: { locale } }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
-
   return (
     <LocaleContext.Provider value={{ locale }}>
       {children}
