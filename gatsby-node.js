@@ -7,6 +7,7 @@ const {
   removeTrailingSlash,
 } = require(`./src/utils/gatsby-node-helpers`);
 
+// Modifying pages created by core or plugins
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
 
@@ -78,62 +79,66 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
 
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-                locale
-                isDefault
-              }
-              frontmatter {
-                title
+  // create post page for each locale
+  Object.keys(locales).map(async lang => {
+    const result = await graphql(
+      `
+        {
+          allMarkdownRemark(
+            filter: { fields: { locale: { eq: "${lang}" } }}
+            sort: { fields: [frontmatter___date], order: DESC }
+            limit: 1000
+          ) {
+            edges {
+              node {
+                fields {
+                  slug
+                  locale
+                  isDefault
+                }
+                frontmatter {
+                  title
+                }
               }
             }
           }
         }
-      }
-    `
-  )
+      `
+    )
 
-  if (result.errors) {
-    throw result.errors
-  }
+    if (result.errors) {
+      throw result.errors
+    }
 
-  // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
+    // Create blog posts pages.
+    const posts = result.data.allMarkdownRemark.edges
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
+    posts.forEach((post, index) => {
+      const previous = index === posts.length - 1 ? null : posts[index + 1].node
+      const next = index === 0 ? null : posts[index - 1].node
 
-    // Getting Slug and Title
-    const slug = post.node.fields.slug;
-    const title = post.node.frontmatter.title;
+      // Getting Slug and Title
+      const slug = post.node.fields.slug;
+      const title = post.node.frontmatter.title;
 
-    // Use the fields created in exports.onCreateNode
-    const locale = post.node.fields.locale;
-    const isDefault = post.node.fields.isDefault;
+      // Use the fields created in exports.onCreateNode
+      const locale = post.node.fields.locale;
+      const isDefault = post.node.fields.isDefault;
 
-    createPage({
-      path: localizedSlug({ isDefault, locale, slug }),
-      component: blogPost,
-      context: {
-        slug,
-        previous,
-        next,
-        // Pass both the "title" and "locale" to find a unique file
-        // Only the title would not have been sufficient as articles could have the same title
-        // in different languages, e.g. because an english phrase is also common in german
-        locale,
-        title,
-      },
+      createPage({
+        path: localizedSlug({ isDefault, locale, slug }),
+        component: blogPost,
+        context: {
+          previous,
+          next,
+          // Pass both the "title" and "locale" to find a unique file
+          // Only the title would not have been sufficient as articles could have the same title
+          // in different languages, e.g. because an english phrase is also common in german
+          locale,
+          title,
+          dateFormat: locales[locale].dateFormat,
+        },
+      })
     })
   })
 }
