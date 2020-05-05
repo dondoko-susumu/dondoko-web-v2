@@ -9,7 +9,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
-import useTranslations from "../components/useTranslations"
+import useTranslations from "./useTranslations"
+import SocialNav from "./socialNav"
 import { rhythm } from "../utils/typography"
 
 const Bio = () => {
@@ -37,7 +38,7 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(1.5),
+        marginBottom: 0,
       }}
     >
       <Image
@@ -53,13 +54,16 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        <strong>{author}</strong>
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          Twitter
-        </a>
-      </p>
+      <div>
+        <p
+          style={{
+            marginBottom: 0,
+          }}
+        >
+          <strong>{author}</strong>
+        </p>
+        <SocialNav />
+      </div>
     </div>
   )
 }

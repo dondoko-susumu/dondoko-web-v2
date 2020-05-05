@@ -1,11 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import locales from '../../config/i18n';
 import useTranslations from "../components/useTranslations"
 
 import Img from "gatsby-image"
-import Bio from "../components/bio"
 import Welcome from "../components/welcome"
+import SocialNav from "../components/socialNav"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Link from "../components/localizedLink"
@@ -15,6 +16,7 @@ import { rhythm } from "../utils/typography"
 const BlogIndex = ({ data, location, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
 
+  const { locale } = pageContext
   const {
     siteTitle,
     home,
@@ -22,8 +24,9 @@ const BlogIndex = ({ data, location, pageContext }) => {
 
   return (
     <Layout rootPath location={location} title={siteTitle} >
-      <SEO title={home} lang={pageContext.locale} />
+      <SEO title={home} lang={locales[locale].siteLanguage} />
       <Welcome />
+      <SocialNav />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         let imgFluid = null
