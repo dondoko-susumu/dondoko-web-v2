@@ -107,6 +107,16 @@ const SocialNav = () => {
         <li>
           <a
             style={iconStyle}
+            title="Note"
+            href="https://note.com/dondoko_susumu"
+            target="blank"
+          >
+            <NoteIcon size="18" />
+          </a>
+        </li>
+        <li>
+          <a
+            style={iconStyle}
             title="Github"
             href="https://github.com/dondoko-susumu/"
             target="blank"
@@ -145,18 +155,6 @@ const SocialNav = () => {
               target="blank"
             >
               <BookMeterIcon size="18" />
-            </a>
-          </li>
-        }
-        {locale === "ja" &&
-          <li>
-            <a
-              style={iconStyle}
-              title="Note"
-              href="https://note.com/dondoko_susumu"
-              target="blank"
-            >
-              <NoteIcon size="18" />
             </a>
           </li>
         }
