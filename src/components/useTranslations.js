@@ -1,7 +1,7 @@
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { LocaleContext } from "./LocaleContext"
+import { LocaleContext } from "./localeContext"
 
 const useTranslations = () => {
   // Grab the locale (passed through context) from the Context Provider
@@ -34,10 +34,16 @@ const query = graphql`
           translations: childTranslationsJson {
             siteTitle,
             siteDescription,
+            author
+
+            notFound
+            notFoundDescription
+
             home
             hello
             welcome
-            author
+
+
           }
         }
       }

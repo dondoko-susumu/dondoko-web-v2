@@ -64,8 +64,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     // If it's the default language, pass the locale for that
     const lang = isDefault ? defaultKey : name.split(`.`)[1];
 
+    // slug
     const filePath = createFilePath({ node, getNode });
-    const slug = filePath.split(`/`)[1];
+    const slugArray = filePath.split(`/`).filter(p => p !== '');
+    slugArray.pop(); // delete last path (e,g index.ja)
+    const slug = slugArray.join(`/`);
 
     // Adding the nodes on GraphQL for each post as "fields"
     createNodeField({ node, name: `slug`, value: slug });

@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Link from "../components/LocalizedLink"
+import Link from "../components/localizedLink"
 
 import { rhythm } from "../utils/typography"
 
@@ -20,7 +20,7 @@ const BlogIndex = ({ data, location, pageContext }) => {
   } = useTranslations()
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout rootPath location={location} title={siteTitle} >
       <SEO title={home} lang={pageContext.locale} />
       <Bio />
       {posts.map(({ node }) => {
