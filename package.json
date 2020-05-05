@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Dondoko Susumu <kkbt2003@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/dondoko-susumu/website-v2/issues"
   },
   "dependencies": {
     "gatsby": "^2.21.0",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "prettier": "2.0.5"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/dondoko-susumu/website-v2#readme",
   "keywords": [
     "gatsby"
   ],
@@ -50,7 +50,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/dondoko-susumu/website-v2.git"
   },
   "scripts": {
     "build": "gatsby build",
