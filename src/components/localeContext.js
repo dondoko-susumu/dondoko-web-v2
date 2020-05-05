@@ -1,6 +1,10 @@
 import React from "react"
 
-const LocaleContext = React.createContext();
+const defaultState = {
+  locale: "ja",
+}
+
+const LocaleContext = React.createContext(defaultState);
 
 // Use the built-in Context API to make the "locale" available to every component in the tree
 // This e.g. enables the LocalizedLink to function correctly

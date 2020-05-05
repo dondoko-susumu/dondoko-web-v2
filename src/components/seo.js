@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import useTranslations from "../components/useTranslations"
 
-const SEO = ({ description, lang, meta, title }) => {
+const SEO = ({ description, lang, meta, title, image }) => {
   const { site, ogImage } = useStaticQuery(
     graphql`
       query {
@@ -42,11 +42,14 @@ const SEO = ({ description, lang, meta, title }) => {
     siteDescription,
   } = useTranslations()
 
-  const ogDefaultImageURL = `${site.siteMetadata.siteURL}${ogImage.publicURL}`
+
+  let ogImageURL = `${site.siteMetadata.siteURL}${ogImage.publicURL}`
+  if (image) {
+    ogImageURL = `${site.siteMetadata.siteURL}${image}`
+  }
 
   const metaTitle = title || siteTitle || site.siteMetadata.title
   const metaDescription = description || siteDescription || site.siteMetadata.description
-  const ogImageURL = ogDefaultImageURL
 
   return (
     <Helmet

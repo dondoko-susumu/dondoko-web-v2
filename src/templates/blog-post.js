@@ -21,6 +21,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         lang={locale}
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        image={post.frontmatter.image.publicURL}
       />
       <article>
         <header>
@@ -100,6 +101,9 @@ export const pageQuery = graphql`
         title
         date(formatString: $dateFormat)
         description
+        image {
+          publicURL
+        }
       }
     }
   }
