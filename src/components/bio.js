@@ -9,12 +9,13 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
+import useTranslations from "../components/useTranslations"
 import { rhythm } from "../utils/typography"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(relativePath: {eq: "kabagorou.png"}) {
         childImageSharp {
           fixed(width: 50, height: 50) {
             ...GatsbyImageSharpFixed
@@ -23,10 +24,6 @@ const Bio = () => {
       }
       site {
         siteMetadata {
-          author {
-            name
-            summary
-          }
           social {
             twitter
           }
@@ -34,18 +31,18 @@ const Bio = () => {
       }
     }
   `)
-
-  const { author, social } = data.site.siteMetadata
+  const { author } = useTranslations();
+  const { social } = data.site.siteMetadata
   return (
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(2.5),
+        marginBottom: rhythm(1.5),
       }}
     >
       <Image
         fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
+        alt={author}
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
@@ -57,10 +54,10 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}
+        <strong>{author}</strong>
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
+          Twitter
         </a>
       </p>
     </div>

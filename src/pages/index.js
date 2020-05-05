@@ -1,43 +1,63 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
+import useTranslations from "../components/useTranslations"
+
+import Img from "gatsby-image"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Link from "../components/localizedLink"
+
 import { rhythm } from "../utils/typography"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+const BlogIndex = ({ data, location, pageContext }) => {
   const posts = data.allMarkdownRemark.edges
 
+  const {
+    siteTitle,
+    home,
+  } = useTranslations()
+
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+    <Layout rootPath location={location} title={siteTitle} >
+      <SEO title={home} lang={pageContext.locale} />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
+        let imgFluid = null
+        if (node.frontmatter.image) {
+          imgFluid = node.frontmatter.image.childImageSharp.fluid
+        }
+
         return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+          <Link style={{ boxShadow: `none`, color: `black` }} to={`/blog/${node.fields.slug}`}>
+            <article key={node.fields.slug}>
+              <header>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                  }}
+                >
                   {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
+                </h3>
+                <small>{node.frontmatter.date}</small>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+                {imgFluid &&
+                  <Img
+                    fluid={imgFluid}
+                    alt={title}
+                  />
+                }
+              </section>
+            </article>
+          </Link>
         )
       })}
     </Layout>
@@ -47,13 +67,13 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
+  query Index($locale: String!, $dateFormat: String!) {
+    allMarkdownRemark(
+      filter: {
+        fields: { locale: { eq: $locale } }
       }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt
@@ -61,9 +81,16 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: $dateFormat)
             title
             description
+            image {
+              childImageSharp {
+                fluid(maxWidth: 400, maxHeight: 200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
