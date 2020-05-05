@@ -5,6 +5,7 @@ import useTranslations from "../components/useTranslations"
 
 import Img from "gatsby-image"
 import Bio from "../components/bio"
+import Welcome from "../components/welcome"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Link from "../components/localizedLink"
@@ -22,7 +23,7 @@ const BlogIndex = ({ data, location, pageContext }) => {
   return (
     <Layout rootPath location={location} title={siteTitle} >
       <SEO title={home} lang={pageContext.locale} />
-      <Bio />
+      <Welcome />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         let imgFluid = null

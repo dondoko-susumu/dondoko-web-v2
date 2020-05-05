@@ -3,11 +3,11 @@ import React from "react"
 import { rhythm } from "../utils/typography"
 import Link from "./localizedLink"
 
-const Header = ({ title }) => {
+const BlogHeader = ({ title }) => {
   const header = (
-    <h1
+    <h3
       style={{
-        marginBottom: rhythm(0.5),
+        fontFamily: `Montserrat, sans-serif`,
         marginTop: 0,
       }}
     >
@@ -20,7 +20,7 @@ const Header = ({ title }) => {
       >
         {title}
       </Link>
-    </h1>
+    </h3>
   )
 
   return (
@@ -28,4 +28,4 @@ const Header = ({ title }) => {
   )
 }
 
-export default Header
+export default BlogHeader

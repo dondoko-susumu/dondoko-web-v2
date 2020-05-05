@@ -42,9 +42,11 @@ const SEO = ({ description, lang, meta, title }) => {
     siteDescription,
   } = useTranslations()
 
+  const ogDefaultImageURL = `${site.siteMetadata.siteURL}${ogImage.publicURL}`
+
   const metaTitle = title || siteTitle || site.siteMetadata.title
   const metaDescription = description || siteDescription || site.siteMetadata.description
-  const ogImageURL = `${site.siteMetadata.siteURL}${ogImage.publicURL}`
+  const ogImageURL = ogDefaultImageURL
 
   return (
     <Helmet
