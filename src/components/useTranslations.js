@@ -42,8 +42,6 @@ const query = graphql`
             home
             hello
             welcome
-
-
           }
         }
       }

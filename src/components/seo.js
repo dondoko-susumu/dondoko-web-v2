@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import locales from '../../config/i18n';
 
 import useTranslations from "../components/useTranslations"
 
@@ -50,6 +51,15 @@ const SEO = ({ description, lang, meta, title, image }) => {
 
   const metaTitle = title || siteTitle || site.siteMetadata.title
   const metaDescription = description || siteDescription || site.siteMetadata.description
+
+  const localesList = Object.keys(locales).map(lkey => {
+    const l = locales[lkey]
+    const path = l.default ? site.siteMetadata.siteURL : `${site.siteMetadata.siteURL}/${l.path}`
+    return {
+      lang: l.siteLanguage,
+      path,
+    }
+  })
 
   return (
     <Helmet
@@ -96,7 +106,11 @@ const SEO = ({ description, lang, meta, title, image }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      {localesList.map((l) =>
+        <link rel="alternate" href={l.path} hrefLang={l.lang} key={l.lang} />
+      )}
+    </Helmet>
   )
 }
 

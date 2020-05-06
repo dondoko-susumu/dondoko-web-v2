@@ -7,8 +7,10 @@
 - [] MDX
 - [] tag
 - [] feed(rss)
+- [x] link hreflang
 - [] ベトナム語
 - [] contact
+- [] supporter program
 
 ## LICENSE
 
