@@ -1,6 +1,5 @@
 import React from "react"
 
-import { rhythm } from "../utils/typography"
 import Link from "./localizedLink"
 
 const BlogHeader = ({ title }) => {

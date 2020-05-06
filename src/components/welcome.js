@@ -22,18 +22,11 @@ const Welcome = () => {
           }
         }
       }
-      site {
-        siteMetadata {
-          social {
-            twitter
-          }
-        }
-      }
     }
   `)
 
   const { author, hello, welcome } = useTranslations();
-  const { social } = data.site.siteMetadata
+
   return (
     <div
       style={{

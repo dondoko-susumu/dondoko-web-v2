@@ -23,17 +23,11 @@ const Bio = () => {
           }
         }
       }
-      site {
-        siteMetadata {
-          social {
-            twitter
-          }
-        }
-      }
     }
   `)
+
   const { author } = useTranslations();
-  const { social } = data.site.siteMetadata
+
   return (
     <div
       style={{

@@ -2,7 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { LocaleContext } from "./localeContext"
 
-import { rhythm } from "../utils/typography"
 import {
   TwitterIcon,
   InstagramIcon,
