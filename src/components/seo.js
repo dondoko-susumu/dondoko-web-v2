@@ -60,14 +60,16 @@ const SEO = ({ description, lang, meta, title, image }) => {
 
   const metaDescription = description || siteDescription || site.siteMetadata.description
 
-  const localesList = Object.keys(locales).map(lkey => {
-    const l = locales[lkey]
-    const path = l.default ? site.siteMetadata.siteURL : `${site.siteMetadata.siteURL}/${l.path}`
-    return {
-      lang: l.siteLanguage,
-      path,
-    }
-  })
+  const localesList = Object.keys(locales)
+    .filter(lang => !locales[lang].disable)
+    .map(lkey => {
+      const l = locales[lkey]
+      const path = l.default ? site.siteMetadata.siteURL : `${site.siteMetadata.siteURL}/${l.path}`
+      return {
+        lang: l.siteLanguage,
+        path,
+      }
+    })
 
   return (
     <Helmet

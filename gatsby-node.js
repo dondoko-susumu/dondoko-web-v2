@@ -16,28 +16,30 @@ exports.onCreatePage = ({ page, actions }) => {
   deletePage(page);
 
   // Grab the keys ('en' & 'pt') of locales and map over them
-  Object.keys(locales).filter(lang => !locales[lang].disable).map(lang => {
-    // Use the values defined in "locales" to construct the path
-    const localizedPath = locales[lang].default
-      ? page.path
-      : `${locales[lang].path}${page.path}`;
+  Object.keys(locales)
+    .filter(lang => !locales[lang].disable)
+    .map(lang => {
+      // Use the values defined in "locales" to construct the path
+      const localizedPath = locales[lang].default
+        ? page.path
+        : `${locales[lang].path}${page.path}`;
 
-    return createPage({
-      // Pass on everything from the original page
-      ...page,
-      // Since page.path returns with a trailing slash (e.g. "/pt/")
-      // We want to remove that (e.g. "pt/")
-      path: removeTrailingSlash(localizedPath),
-      // Pass in the locale as context to every page
-      // This context also gets passed to the src/components/layout file
-      // This should ensure that the locale is available on every page
-      context: {
-        ...page.context,
-        locale: lang,
-        dateFormat: locales[lang].dateFormat,
-      },
+      return createPage({
+        // Pass on everything from the original page
+        ...page,
+        // Since page.path returns with a trailing slash (e.g. "/pt/")
+        // We want to remove that (e.g. "pt/")
+        path: removeTrailingSlash(localizedPath),
+        // Pass in the locale as context to every page
+        // This context also gets passed to the src/components/layout file
+        // This should ensure that the locale is available on every page
+        context: {
+          ...page.context,
+          locale: lang,
+          dateFormat: locales[lang].dateFormat,
+        },
+      });
     });
-  });
 };
 
 // As you don't want to manually add the correct languge to the frontmatter of each file
