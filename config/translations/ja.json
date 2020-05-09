@@ -6,5 +6,7 @@
   "hello": "やぁ、みんな",
   "welcome": "どんどこすすむのホームページへようこそ。",
   "notFound": "見つからないんだな",
-  "notFoundDescription": "存在しないページにぶつかっただけなんだよな...悲しさ。"
+  "notFoundDescription": "存在しないページにぶつかっただけなんだよな...悲しさ。",
+  "currencyCode": "JPY",
+  "currency": "¥"
 }

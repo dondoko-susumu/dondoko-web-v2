@@ -9,11 +9,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import locales from '../../config/i18n';
 
+import locales from '../../config/i18n';
+import { LocaleContext } from './localeContext';
 import useTranslations from "../components/useTranslations"
 
 const SEO = ({ description, lang, meta, title, image }) => {
+  const { locale } = React.useContext(LocaleContext);
+
   const { site, ogImage } = useStaticQuery(
     graphql`
       query {
@@ -49,9 +52,9 @@ const SEO = ({ description, lang, meta, title, image }) => {
     ogImageURL = `${site.siteMetadata.siteURL}${image}`
   }
 
-  const pageTitle = title || siteTitle || site.siteMetadata.title
-  let metaTitle = pageTitle
+  let metaTitle, pageTitle = siteTitle || site.siteMetadata.title
   if (title) {
+    pageTitle = title
     metaTitle = `${title} | ${siteTitle}`
   }
 
@@ -66,11 +69,10 @@ const SEO = ({ description, lang, meta, title, image }) => {
     }
   })
 
-
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: locales[locale].siteLanguage,
       }}
       title={metaTitle}
       meta={[
@@ -123,13 +125,14 @@ SEO.defaultProps = {
   lang: `ja`,
   meta: [],
   description: ``,
+  title: ``,
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 }
 
 export default SEO

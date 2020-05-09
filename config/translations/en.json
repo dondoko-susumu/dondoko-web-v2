@@ -6,5 +6,7 @@
   "hello": "Hi people",
   "welcome": "Welcome to Dondokosusumu Official Website.",
   "notFound": "Not Found",
-  "notFoundDescription": "You just hit a route that doesn&#39;t exist... the sadness."
+  "notFoundDescription": "You just hit a route that doesn&#39;t exist... the sadness.",
+  "currencyCode": "USD",
+  "currency": "$"
 }

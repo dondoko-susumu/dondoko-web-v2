@@ -1,7 +1,10 @@
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import locales from "../../config/i18n"
+import { findKey } from "../utils/gatsby-node-helpers"
 import { LocaleContext } from "./localeContext"
+
 
 const useTranslations = () => {
   // Grab the locale (passed through context) from the Context Provider
@@ -17,10 +20,17 @@ const useTranslations = () => {
     }
   })
 
+  // Find the key that has "default: true" set (in this case it returns "en")
+  const defaultKey = findKey(locales, o => o.default === true);
+
+  // Only return translations for the default locale
+  const defaultLang = simplified.filter(lang => lang.name === defaultKey)[0]
+
   // Only return translations for the current locale
   const { translations } = simplified.filter(lang => lang.name === locale)[0]
+  Object.keys(translations).forEach(key => translations[key] === null && delete translations[key])
 
-  return translations
+  return { ...defaultLang.translations, ...translations }
 }
 
 export default useTranslations
@@ -38,6 +48,9 @@ const query = graphql`
 
             notFound
             notFoundDescription
+
+            currencyCode
+            currency
 
             home
             hello

@@ -9,12 +9,14 @@ import { LocaleContext } from './localeContext';
 const SelectLanguage = () => {
   const { locale } = React.useContext(LocaleContext);
 
-  const options = Object.keys(locales).map(lang => {
-    return {
-      value: lang,
-      label: locales[lang].title
-    }
-  })
+  const options = Object.keys(locales)
+    .filter(lang => !locales[lang].disable)
+    .map(lang => {
+      return {
+        value: lang,
+        label: locales[lang].title
+      }
+    })
 
   const selectOption = options.find(o => o.value === locale);
 
@@ -22,7 +24,7 @@ const SelectLanguage = () => {
     container: (provided) => ({
       ...provided,
       fontSize: 12,
-      width: 120,
+      width: 220,
     }),
     control: (provided, state) => ({
       ...provided,
