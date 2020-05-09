@@ -24,7 +24,7 @@ const BlogIndex = ({ data, location, pageContext }) => {
 
   return (
     <Layout rootPath location={location} title={siteTitle} >
-      <SEO title={home} lang={locales[locale].siteLanguage} />
+      <SEO lang={locales[locale].siteLanguage} />
       <Welcome />
       <SocialNav />
       {posts.map(({ node }) => {

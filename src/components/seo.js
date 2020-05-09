@@ -49,7 +49,12 @@ const SEO = ({ description, lang, meta, title, image }) => {
     ogImageURL = `${site.siteMetadata.siteURL}${image}`
   }
 
-  const metaTitle = title || siteTitle || site.siteMetadata.title
+  const pageTitle = title || siteTitle || site.siteMetadata.title
+  let metaTitle = pageTitle
+  if (title) {
+    metaTitle = `${title} | ${siteTitle}`
+  }
+
   const metaDescription = description || siteDescription || site.siteMetadata.description
 
   const localesList = Object.keys(locales).map(lkey => {
@@ -61,13 +66,13 @@ const SEO = ({ description, lang, meta, title, image }) => {
     }
   })
 
+
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${siteTitle}`}
+      title={metaTitle}
       meta={[
         {
           name: `description`,
@@ -99,7 +104,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
         },
         {
           name: `twitter:title`,
-          content: metaTitle,
+          content: pageTitle,
         },
         {
           name: `twitter:description`,
