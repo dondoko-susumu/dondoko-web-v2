@@ -4,6 +4,7 @@
 
 ## TODO
 
+- [] OSS message
 - [] MDX
 - [] tag
 - [] feed(rss)
@@ -16,8 +17,8 @@
 - [] 404
 - [x] English
 - [x] Tiếng Việt (Vietnamese)
-- [] Deutsch
-- [] Français
+- [x] Deutsch
+- [x] Français
 - [] Español
 - [] Português
 - [] Italiano
