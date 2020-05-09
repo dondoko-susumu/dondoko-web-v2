@@ -27,7 +27,6 @@ module.exports = {
     title: `Deutsch`,
   },
   fr: {
-    disable: true,
     path: `fr`,
     siteLanguage: `fr`,
     locale: `fr-FR`,
