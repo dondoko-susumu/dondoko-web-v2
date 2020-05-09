@@ -19,7 +19,6 @@ module.exports = {
     title: `English`,
   },
   de: {
-    disable: true,
     path: `de`,
     siteLanguage: `de`,
     locale: `de-DE`,

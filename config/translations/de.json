@@ -1,4 +1,12 @@
 {
+  "siteTitle": "Website Dondokosusumu",
+  "siteDescription": "Offizielle Website von Dondokosusumu",
+  "author": "Dondokosusumu",
+  "home": "STARTSEITE",
+  "hello": "Hallo Leute",
+  "welcome": "Willkommen auf der offiziellen Website von Dondokosusumu.",
+  "notFound": "Nicht gefunden",
+  "notFoundDescription": "Sie sind gerade auf eine Route gestoßen, die es nicht gibt... die Traurigkeit.",
   "currencyCode": "EUR",
   "currency": "€"
 }
