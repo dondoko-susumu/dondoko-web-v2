@@ -67,7 +67,6 @@ module.exports = {
     title: `Nederlands`,
   },
   pl: {
-    disable: true,
     path: `pl`,
     siteLanguage: `pl`,
     locale: `pl-PL`,
@@ -76,7 +75,6 @@ module.exports = {
     title: `Polski`,
   },
   ru: {
-    disable: true,
     path: `ru`,
     siteLanguage: `ru`,
     locale: `ru-RU`,
@@ -85,7 +83,6 @@ module.exports = {
     title: `Русский (Russe)`,
   },
   zh: {
-    disable: true,
     path: `zh`,
     siteLanguage: `zh`,
     locale: `zh-CN`,
