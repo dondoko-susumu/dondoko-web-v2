@@ -52,10 +52,11 @@ const SEO = ({ description, lang, meta, title, image }) => {
     ogImageURL = `${site.siteMetadata.siteURL}${image}`
   }
 
-  let metaTitle, pageTitle = siteTitle || site.siteMetadata.title
+  let metaTitle = siteTitle || site.siteMetadata.title
+  let pageTitle = metaTitle
   if (title) {
-    pageTitle = title
     metaTitle = `${title} | ${siteTitle}`
+    pageTitle = title
   }
 
   const metaDescription = description || siteDescription || site.siteMetadata.description
