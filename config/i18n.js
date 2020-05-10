@@ -35,7 +35,6 @@ module.exports = {
     title: `Français`,
   },
   es: {
-    disable: true,
     path: `es`,
     siteLanguage: `es`,
     locale: `es-ES`,
@@ -44,7 +43,6 @@ module.exports = {
     title: `Español`,
   },
   pt: {
-    disable: true,
     path: `pt`,
     siteLanguage: `pt`,
     locale: `pt-PT`,
@@ -53,7 +51,6 @@ module.exports = {
     title: `Português`,
   },
   it: {
-    disable: true,
     path: `it`,
     siteLanguage: `it`,
     locale: `it-IT`,
@@ -62,7 +59,6 @@ module.exports = {
     title: `Italiano`,
   },
   nl: {
-    disable: true,
     path: `nl`,
     siteLanguage: `nl`,
     locale: `nl-NL`,
@@ -71,7 +67,6 @@ module.exports = {
     title: `Nederlands`,
   },
   pl: {
-    disable: true,
     path: `pl`,
     siteLanguage: `pl`,
     locale: `pl-PL`,
@@ -80,7 +75,6 @@ module.exports = {
     title: `Polski`,
   },
   ru: {
-    disable: true,
     path: `ru`,
     siteLanguage: `ru`,
     locale: `ru-RU`,
@@ -89,12 +83,11 @@ module.exports = {
     title: `Русский (Russe)`,
   },
   zh: {
-    disable: true,
     path: `zh`,
     siteLanguage: `zh`,
     locale: `zh-CN`,
     ogLanguage: `zh_CN`,
-    dateFormat: `DD/MM/YYYY`,
+    dateFormat: `YYYY/MM/DD`,
     title: `简体中文 (Simplified Chinese)`,
   },
   vi: {

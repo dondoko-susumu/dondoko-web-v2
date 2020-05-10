@@ -1,0 +1,12 @@
+{
+  "siteTitle": "Sitio web de Dondokosusumu",
+  "siteDescription": "Página web oficial de Dondokosusumu",
+  "author": "Dondokosusumu",
+  "home": "INICIO",
+  "hello": "Hola gente",
+  "welcome": "Bienvenido a la página web oficial de Dondokosusumu.",
+  "notFound": "No se encuentra",
+  "notFoundDescription": "Acabas de encontrar una ruta que no existe... la tristeza.",
+  "currencyCode": "EUR",
+  "currency": "€"
+}
