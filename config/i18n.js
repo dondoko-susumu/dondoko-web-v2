@@ -43,6 +43,7 @@ module.exports = {
     title: `Español`,
   },
   pt: {
+    disable: true,
     path: `pt`,
     siteLanguage: `pt`,
     locale: `pt-PT`,
@@ -59,6 +60,7 @@ module.exports = {
     title: `Italiano`,
   },
   nl: {
+    disable: true,
     path: `nl`,
     siteLanguage: `nl`,
     locale: `nl-NL`,
@@ -67,6 +69,7 @@ module.exports = {
     title: `Nederlands`,
   },
   pl: {
+    disable: true,
     path: `pl`,
     siteLanguage: `pl`,
     locale: `pl-PL`,
@@ -75,6 +78,7 @@ module.exports = {
     title: `Polski`,
   },
   ru: {
+    disable: true,
     path: `ru`,
     siteLanguage: `ru`,
     locale: `ru-RU`,
@@ -83,6 +87,7 @@ module.exports = {
     title: `Русский (Russe)`,
   },
   zh: {
+    disable: true,
     path: `zh`,
     siteLanguage: `zh`,
     locale: `zh-CN`,
