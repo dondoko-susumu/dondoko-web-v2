@@ -1,12 +1,12 @@
 {
-  "siteTitle": "Site web de Dondokosusumu",
-  "siteDescription": "Site officiel de Dondokosusumu",
+  "siteTitle": "Dondokosusumu-website",
+  "siteDescription": "Officiële website van Dondokosusumu",
   "author": "Dondokosusumu",
-  "home": "HOME",
-  "hello": "Salut les gens",
-  "welcome": "Bienvenue sur le site officiel de Dondokosusumu.",
-  "notFound": "Non trouvé",
-  "notFoundDescription": "Vous venez de prendre un chemin qui n'existe pas... la tristesse.",
+  "home": "THUIS",
+  "hello": "Hoi mensen",
+  "welcome": "Welkom op de officiële website van Dondokosusumu.",
+  "notFound": "Niet gevonden",
+  "notFoundDescription": "Je raakt gewoon een route die niet bestaat... het verdriet.",
   "currencyCode": "EUR",
   "currency": "€"
 }

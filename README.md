@@ -26,7 +26,6 @@
 - [] Polski
 - [] Русский (Russe)
 - [] 简体中文 (Simplified Chinese)
-- [] Tiếng Việt (Vietnamese)
 - [] 조선어 (Korean)
 - [] العربية (Arabic)
 - [] bahasa Indonesia (Indonesian)

@@ -1,12 +1,12 @@
 {
-  "siteTitle": "Site web de Dondokosusumu",
-  "siteDescription": "Site officiel de Dondokosusumu",
+  "siteTitle": "Dondokosusumu Website",
+  "siteDescription": "Dondokosusumu Site Oficial",
   "author": "Dondokosusumu",
   "home": "HOME",
-  "hello": "Salut les gens",
-  "welcome": "Bienvenue sur le site officiel de Dondokosusumu.",
-  "notFound": "Non trouvé",
-  "notFoundDescription": "Vous venez de prendre un chemin qui n'existe pas... la tristesse.",
+  "hello": "Olá pessoal",
+  "welcome": "Bem-vindo ao site oficial da Dondokosusumu.",
+  "notFound": "Não Encontrado",
+  "notFoundDescription": "Acaba de atingir uma rota que não existe... a tristeza.",
   "currencyCode": "EUR",
   "currency": "€"
 }

@@ -1,12 +1,12 @@
 {
-  "siteTitle": "Site web de Dondokosusumu",
-  "siteDescription": "Site officiel de Dondokosusumu",
+  "siteTitle": "Dondokosusumu Веб-сайт",
+  "siteDescription": "Dondokosusumu Официальный сайт",
   "author": "Dondokosusumu",
   "home": "HOME",
-  "hello": "Salut les gens",
-  "welcome": "Bienvenue sur le site officiel de Dondokosusumu.",
-  "notFound": "Non trouvé",
-  "notFoundDescription": "Vous venez de prendre un chemin qui n'existe pas... la tristesse.",
-  "currencyCode": "EUR",
-  "currency": "€"
+  "hello": "Привет всем",
+  "welcome": "Добро пожаловать на официальный сайт Dondokosusumu.",
+  "notFound": "Не найдено",
+  "notFoundDescription": "Ты только что попал в путь, которого не существует... печаль.",
+  "currencyCode": "RUB",
+  "currency": "₽"
 }

@@ -1,12 +1,12 @@
 {
-  "siteTitle": "Site web de Dondokosusumu",
-  "siteDescription": "Site officiel de Dondokosusumu",
+  "siteTitle": "Dondokosusumu网站建设",
+  "siteDescription": "Dondokosusumu官方网站",
   "author": "Dondokosusumu",
-  "home": "HOME",
-  "hello": "Salut les gens",
-  "welcome": "Bienvenue sur le site officiel de Dondokosusumu.",
-  "notFound": "Non trouvé",
-  "notFoundDescription": "Vous venez de prendre un chemin qui n'existe pas... la tristesse.",
-  "currencyCode": "EUR",
-  "currency": "€"
+  "home": "首页",
+  "hello": "大家好",
+  "welcome": "欢迎来到东土之森官方网站。",
+  "notFound": "未找到",
+  "notFoundDescription": "你就这样撞上了一条不存在的路线...悲哀的是，你就这样撞上了一条不存在的路线。",
+  "currencyCode": "CNY",
+  "currency": "¥"
 }
