@@ -43,7 +43,6 @@ module.exports = {
     title: `Español`,
   },
   pt: {
-    disable: true,
     path: `pt`,
     siteLanguage: `pt`,
     locale: `pt-PT`,
@@ -60,7 +59,6 @@ module.exports = {
     title: `Italiano`,
   },
   nl: {
-    disable: true,
     path: `nl`,
     siteLanguage: `nl`,
     locale: `nl-NL`,
