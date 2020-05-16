@@ -19,13 +19,13 @@
 - [x] Tiếng Việt (Vietnamese)
 - [x] Deutsch
 - [x] Français
-- [] Español
-- [] Português
-- [] Italiano
-- [] Nederlands
-- [] Polski
-- [] Русский (Russe)
-- [] 简体中文 (Simplified Chinese)
+- [x] Español
+- [x] Português
+- [x] Italiano
+- [x] Nederlands
+- [x] Polski
+- [x] Русский (Russe)
+- [x] 简体中文 (Simplified Chinese)
 - [] 조선어 (Korean)
 - [] العربية (Arabic)
 - [] bahasa Indonesia (Indonesian)
