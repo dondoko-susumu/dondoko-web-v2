@@ -28,7 +28,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
               name
               summary
             }
-            siteURL
+            siteUrl
             social {
               twitter
             }
@@ -47,9 +47,9 @@ const SEO = ({ description, lang, meta, title, image }) => {
   } = useTranslations()
 
 
-  let ogImageURL = `${site.siteMetadata.siteURL}${ogImage.publicURL}`
+  let ogImageURL = `${site.siteMetadata.siteUrl}${ogImage.publicURL}`
   if (image) {
-    ogImageURL = `${site.siteMetadata.siteURL}${image}`
+    ogImageURL = `${site.siteMetadata.siteUrl}${image}`
   }
 
   let metaTitle = siteTitle || site.siteMetadata.title
@@ -65,7 +65,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
     .filter(lang => !locales[lang].disable)
     .map(lkey => {
       const l = locales[lkey]
-      const path = l.default ? site.siteMetadata.siteURL : `${site.siteMetadata.siteURL}/${l.path}`
+      const path = l.default ? site.siteMetadata.siteUrl : `${site.siteMetadata.siteUrl}/${l.path}`
       return {
         lang: l.siteLanguage,
         path,

@@ -6,7 +6,7 @@ module.exports = {
       summary: `マンガ描いてます。`,
     },
     description: `どんどこすすむ公式ホームページ`,
-    siteURL: `https://xn--28jma5da5l6e.com`,
+    siteUrl: `https://xn--28jma5da5l6e.com`,
     social: {
       twitter: `dondoko_susumu`,
     },
@@ -87,5 +87,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
   ],
 }
