@@ -8,6 +8,7 @@
 - [] MDX
 - [] tag
 - [] feed(rss)
+- [] TypeScript
 - [] contact
 - [] supporter program
 
