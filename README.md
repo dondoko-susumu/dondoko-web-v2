@@ -15,7 +15,7 @@
 ## i18n
 
 - [x] link hreflang
-- [] 404
+- [x] 404
 - [x] English
 - [x] Tiếng Việt (Vietnamese)
 - [x] Deutsch

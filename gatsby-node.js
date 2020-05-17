@@ -24,6 +24,11 @@ exports.onCreatePage = ({ page, actions }) => {
         ? page.path
         : `${locales[lang].path}${page.path}`;
 
+      // Check if the page is a localized 404
+      if (!locales[lang].default && page.path.match(/^\/404\/$/)) {
+        page.matchPath = `/${lang}/*`
+      }
+
       return createPage({
         // Pass on everything from the original page
         ...page,
