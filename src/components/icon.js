@@ -14,11 +14,14 @@ import { Note as NoteIcon } from '@styled-icons/material/Note'
 import { PencilAlt as ScrapBoxIcon } from '@styled-icons/heroicons-solid/PencilAlt'
 import { ArrowDown as ArrowDownIcon } from '@styled-icons/evaicons-solid/ArrowDown'
 import { ArrowIosDownward as ArrowIosDownwardIcon } from '@styled-icons/evaicons-solid/ArrowIosDownward'
+import { ShoppingCart as ShopIcon } from '@styled-icons/evaicons-solid/ShoppingCart'
+
 export {
   TwitterIcon,
   InstagramIcon,
   BlogIcon,
   DrawingBlogIcon,
+  ShopIcon,
   InboxIcon,
   GithubIcon,
   QiitaIcon,

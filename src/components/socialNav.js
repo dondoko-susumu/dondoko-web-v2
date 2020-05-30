@@ -8,6 +8,7 @@ import {
   BlogIcon,
   DrawingBlogIcon,
   InboxIcon,
+  ShopIcon,
   GithubIcon,
   QiitaIcon,
   FacebookIcon,
@@ -111,6 +112,16 @@ const SocialNav = () => {
             target="blank"
           >
             <NoteIcon size="18" />
+          </a>
+        </li>
+        <li>
+          <a
+            style={iconStyle}
+            title="Online Shop"
+            href="https://suzuri.jp/dondoko_susumu"
+            target="blank"
+          >
+            <ShopIcon size="18" />
           </a>
         </li>
         <li>
