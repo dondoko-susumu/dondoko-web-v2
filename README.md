@@ -33,4 +33,4 @@
 
 ## LICENSE
 
-MIT
+©️ 2008 Dondoko Susumu
