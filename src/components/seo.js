@@ -34,7 +34,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
             }
           }
         }
-        ogImage: file(relativePath: {eq: "kabagorou.png"}) {
+        ogImage: file(relativePath: {eq: "dondoko_susumu.png"}) {
           publicURL
         }
       }
