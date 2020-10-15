@@ -2,6 +2,24 @@
 
 [https://どんどこすすむ.com/](https://xn--28jma5da5l6e.com/)
 
+## Usage
+
+```
+% yarn clean
+// gatsby clean
+
+% yarn start
+// gatsby develop
+// http://localhost:8000/
+// http://localhost:8000/___graphql
+
+% yarn build
+// gatsby build
+
+% yarn serve
+// gatsby serve
+```
+
 ## TODO
 
 - [] OSS message
